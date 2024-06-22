@@ -14,10 +14,10 @@ struct StartTabView: View {
             .tabItem {
                 Label("Schichtplan", systemImage: "square.3.layers.3d.down.forward")
             }
-            PersonsListView()
-                .tabItem {
-                    Label("Personal", systemImage: "person.3")
-                }
+//            PersonsListView(shift: <#Shift#>)
+//                .tabItem {
+//                    Label("Personal", systemImage: "person.3")
+//                }
             CalendarView()
                 .tabItem {
                     Label("Kalender", systemImage: "calendar")

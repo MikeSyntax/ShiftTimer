@@ -31,7 +31,7 @@ struct ShiftListView: View {
                                     Text("\(formattedTime(time: shift.startTime)) - \(formattedTime(time: shift.endTime)) Uhr")
                                 }
                                 Spacer()
-                                //Text("^[\(shift.persons.count) Mitarbeiter eingeteilt](inflect: true)")
+                                Text("^[\(shift.staff.count) Mitarbeiter eingeteilt](inflect: true)")
                             }
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                         }
@@ -65,9 +65,9 @@ struct ShiftListView: View {
                         .presentationDetents([.large])
                 }
             }
-            //            .navigationDestination(for: Shift.self) { shift in
-            //                PersonsListView(shift: shift)
-            //            }
+            .navigationDestination(for: Shift.self) { shift in
+                PersonsListView(shift: shift)
+            }
         }
     }
     

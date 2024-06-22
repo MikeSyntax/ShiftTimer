@@ -6,13 +6,78 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PersonsListView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+    @State private var modelType: ModelShift?
+    var shift: Shift
     var body: some View {
-        Text("Personal Ansicht")
+        @Bindable var shift = shift
+        Group{
+            if shift.staff.isEmpty {
+                ContentUnavailableView("Erstelle deinen ersten \(shift.name) Mitarbeiter, indem du auf das \(Image(systemName: "plus.circle.fill")) Button rechts oben klickst", systemImage: "\(shift.icon)")
+            } else {
+                List(shift.staff.sorted(
+                    using: KeyPathComparator(\Staff.date, order: .reverse)
+                )) { staff in
+                    HStack{
+                        Image(systemName: shift.icon)
+                            .foregroundStyle(Color(hex: shift.hexColor)!)
+                        VStack(alignment: .leading){
+                            Text(formattedTime(time: staff.date))
+                            Text(staff.comment)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive){
+                            if let index = shift.staff.firstIndex(where: {$0.id == staff.id }) {
+                                shift.staff.remove(at: index)
+                            }
+                        } label: {
+                            Label("Löschen", systemImage: "trash")
+                        }
+                    }
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            if let index = shift.staff.firstIndex(where: {$0.id == staff.id}) {
+                                shift.staff.remove(at: index)
+                            }
+                        }label: {
+                            Label("Bearbeiten", systemImage: "pencil")
+                        }
+                    }
+                }
+                .listStyle(.plain)
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("\(Image(systemName: shift.icon)) \(shift.name)")
+                    .font(.title)
+                    .foregroundStyle(Color(hex: shift.hexColor)!)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    modelType = .newStaff(shift)
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
+                .sheet(item: $modelType) { sheet in
+                    sheet
+                        .presentationDetents([.medium])
+                }
+            }
+        }
     }
-}
-
-#Preview {
-    PersonsListView()
+    
+    func formattedTime(time: Date) -> String {
+        let components = Calendar.current.dateComponents([.day, .month, .year], from: time)
+        let day = components.day ?? 0
+        let month = components.month ?? 0
+        let year = components.year ?? 0
+        return String(format: "%d.%02d.%d", day, month, year)
+    }
 }

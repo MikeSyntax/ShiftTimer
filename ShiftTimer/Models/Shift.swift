@@ -10,7 +10,9 @@ import SwiftData
 
 @Model class Shift {
     var name: String
+    @Relationship(deleteRule: .cascade)
     var icon: ShiftSymbol.RawValue
+    var staff: [Staff] = []
     var startTime: Date
     var endTime: Date
     var hexColor: String

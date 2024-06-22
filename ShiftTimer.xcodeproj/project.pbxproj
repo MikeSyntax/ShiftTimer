@@ -21,6 +21,9 @@
 		2B8E366A2C26DEF500FCED4A /* ShiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E36692C26DEF500FCED4A /* ShiftListView.swift */; };
 		2B8E366E2C26E79500FCED4A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E366D2C26E79500FCED4A /* CalendarView.swift */; };
 		2B8E36702C26E7A400FCED4A /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E366F2C26E7A400FCED4A /* PersonsListView.swift */; };
+		2BF979D12C270D640075F807 /* StaffFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D02C270D640075F807 /* StaffFormModel.swift */; };
+		2BF979D32C270DF50075F807 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D22C270DF50075F807 /* Staff.swift */; };
+		2BF979D52C270EF90075F807 /* StaffFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D42C270EF90075F807 /* StaffFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		2B8E36692C26DEF500FCED4A /* ShiftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftListView.swift; sourceTree = "<group>"; };
 		2B8E366D2C26E79500FCED4A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		2B8E366F2C26E7A400FCED4A /* PersonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
+		2BF979D02C270D640075F807 /* StaffFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFormModel.swift; sourceTree = "<group>"; };
+		2BF979D22C270DF50075F807 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+		2BF979D42C270EF90075F807 /* StaffFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8E365A2C26BFE100FCED4A /* Shift.swift */,
+				2BF979D22C270DF50075F807 /* Staff.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				2B8E366F2C26E7A400FCED4A /* PersonsListView.swift */,
+				2BF979D02C270D640075F807 /* StaffFormModel.swift */,
+				2BF979D42C270EF90075F807 /* StaffFormView.swift */,
 			);
 			path = "Persons Views";
 			sourceTree = "<group>";
@@ -207,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF979D52C270EF90075F807 /* StaffFormView.swift in Sources */,
 				2B8E366A2C26DEF500FCED4A /* ShiftListView.swift in Sources */,
+				2BF979D12C270D640075F807 /* StaffFormModel.swift in Sources */,
 				2B8E36702C26E7A400FCED4A /* PersonsListView.swift in Sources */,
 				2B8E36662C26CD3300FCED4A /* ShiftIconSelectionView.swift in Sources */,
 				2B8E365D2C26C0B200FCED4A /* ShiftSymbol.swift in Sources */,
@@ -218,6 +229,7 @@
 				2B8E36682C26D3EC00FCED4A /* Color+Extensions.swift in Sources */,
 				2B8E36482C26BAA900FCED4A /* ShiftTimerApp.swift in Sources */,
 				2B8E36562C26BB0700FCED4A /* StartTabView.swift in Sources */,
+				2BF979D32C270DF50075F807 /* Staff.swift in Sources */,
 				2B8E365B2C26BFE100FCED4A /* Shift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
