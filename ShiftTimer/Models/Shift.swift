@@ -14,6 +14,7 @@ class Shift {
     @Relationship(deleteRule: .cascade)
     var icon: ShiftSymbol.RawValue
     var staff: [Staff] = []
+    var employees: [Employees] = []
     var startTime: Date
     var endTime: Date
     var hexColor: String

@@ -97,7 +97,7 @@
 				2BF979DD2C28213D0075F807 /* Employee Views */,
 				2B8E36712C27056700FCED4A /* Extensions */,
 				2B8E36592C26BFB300FCED4A /* Models */,
-				2B8E366B2C26E76A00FCED4A /* Persons Views */,
+				2B8E366B2C26E76A00FCED4A /* Staff Views */,
 				2B8E364D2C26BAAB00FCED4A /* Preview Content */,
 				2B8E36622C26C40800FCED4A /* Shift Views */,
 			);
@@ -134,14 +134,14 @@
 			path = "Shift Views";
 			sourceTree = "<group>";
 		};
-		2B8E366B2C26E76A00FCED4A /* Persons Views */ = {
+		2B8E366B2C26E76A00FCED4A /* Staff Views */ = {
 			isa = PBXGroup;
 			children = (
 				2B8E366F2C26E7A400FCED4A /* StaffListView.swift */,
 				2BF979D02C270D640075F807 /* StaffFormModel.swift */,
 				2BF979D42C270EF90075F807 /* StaffFormView.swift */,
 			);
-			path = "Persons Views";
+			path = "Staff Views";
 			sourceTree = "<group>";
 		};
 		2B8E366C2C26E77700FCED4A /* Calendar Views */ = {

@@ -17,7 +17,7 @@ struct ShiftListView: View {
         NavigationStack(path: $path){
             Group{
                 if shifts.isEmpty {
-                    ContentUnavailableView("Erstelle deine erste Schicht, klicke hierzu auf das Plus \(Image(systemName: "plus.circle.fill")) oben rechts.", image: "launchScreen" )
+                    ContentUnavailableView("Erstelle deine erste Schicht, klicke hierzu auf das Plus \(Image(systemName: "plus.circle.fill")) oben rechts.", image: "" )
                 } else {
                     List(shifts) { shift in
                         NavigationLink(value: shift){

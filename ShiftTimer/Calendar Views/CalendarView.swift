@@ -40,7 +40,7 @@ struct CalendarView: View {
             
             LazyVGrid(columns: columns) {
                 ForEach(days, id: \.self){ day in
-                    NavigationLink(destination: destinationView(for: day)){
+//                    NavigationLink(destination: destinationView(for: day)){
                         if day.monthInt != date.monthInt {
                             Text("")
                         } else {
@@ -74,7 +74,7 @@ struct CalendarView: View {
                                             .offset(x: 5, y: 5)
                                     }
                                 }
-                        }
+//                        }
                     }
                     
                 }
@@ -105,9 +105,9 @@ struct CalendarView: View {
         let mappedItems = filteredStaff.map {($0.date.dayInt, 1)}
         counts = Dictionary(mappedItems, uniquingKeysWith: +)
     }
-    private func destinationView(for date: Date) -> some View {
-        return EmployeesListView()
-    }
+//    private func destinationView(for date: Date) -> some View {
+//        return EmployeesListView()
+//    }
 }
 
 

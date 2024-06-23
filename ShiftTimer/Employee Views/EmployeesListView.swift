@@ -15,46 +15,52 @@ struct EmployeesListView: View {
     @Query(sort: \Employees.name) private var employees: [Employees]
     
     var body: some View {
-        Group{
-//            if employees.isEmpty {
-//                ContentUnavailableView("Erstelle deinen ersten Mitarbeiter, klicke hierzu auf das Plus \(Image(systemName: "plus.circle.fill")) oben rechts.", systemImage: "")
-//            } else {
-                List(employees) { employee in
-                    HStack{
-                        Text(employee.name.capitalized)
-                    }
-                    
-                    .swipeActions(edge: .trailing) {
-                        Button(role: .destructive){
-                            modelContext.delete(employee)
-                        } label: {
-                            Label("Löschen", systemImage: "trash")
+        NavigationStack{
+            Group{
+                if employees.isEmpty {
+                    ContentUnavailableView("Erstelle deinen ersten Mitarbeiter, klicke hierzu auf das Plus \(Image(systemName: "plus.circle.fill")) oben rechts.", systemImage: "")
+                } else {
+                    List(employees) { employee in
+                        HStack{
+                            Text(employee.name.capitalized)
+                            Spacer()
+                                Text("aktiv")
+                                    .foregroundColor(.green)
+                        }
+                        
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive){
+                                modelContext.delete(employee)
+                            } label: {
+                                Label("Löschen", systemImage: "trash")
+                            }
+                        }
+                        .swipeActions(edge: .leading){
+                            Button {
+                                modelType = .updateNewEmployee(employee)
+                            } label: {
+                                Label("Bearbeiten", systemImage: "pencil")
+                            }
                         }
                     }
-                    .swipeActions(edge: .leading){
+                    .listStyle(.plain)
+                }
+                
+                Divider()
+                    .navigationTitle("Mitarbeiterliste")
+                    .toolbar {
                         Button {
-                            modelType = .updateNewEmployee(employee)
+                            modelType = .newEmployee
                         } label: {
-                            Label("Bearbeiten", systemImage: "pencil")
+                            Image(systemName: "plus.circle.fill")
+                        }
+                        .sheet(item: $modelType) { sheet in
+                            sheet
+                                .presentationDetents([.medium])
                         }
                     }
-                }
-                .listStyle(.plain)
-//            }
-        }
-        Divider()
-            .navigationTitle("Mitarbeiterliste")
-            .toolbar {
-                Button {
-                    modelType = .newEmployee
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                }
-                .sheet(item: $modelType) { sheet in
-                    sheet
-                        .presentationDetents([.medium])
-                }
             }
+        }
     }
 }
 

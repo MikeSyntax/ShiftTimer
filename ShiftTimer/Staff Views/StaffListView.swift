@@ -18,7 +18,7 @@ struct StaffListView: View {
         @Bindable var shift = shift
         Group{
             if shift.staff.isEmpty {
-                ContentUnavailableView("Erstelle deinen ersten \(shift.name) Mitarbeiter, indem du auf das \(Image(systemName: "plus.circle.fill")) Button rechts oben klickst", systemImage: "\(shift.icon)")
+                ContentUnavailableView("Teile deine Mitarbeiter für die \(shift.name) ein und klicke rechts oben das \(Image(systemName: "plus.circle.fill"))", systemImage: "\(shift.icon)")
             } else {
                 List(shift.staff.sorted(
                     using: KeyPathComparator(\Staff.date, order: .reverse)

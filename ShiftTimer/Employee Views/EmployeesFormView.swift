@@ -32,7 +32,7 @@ struct EmployeesFormView: View {
                             model.employees?.name = model.name
                             model.employees?.isActive = model.isActive
                         } else {
-                            let newEmployee = Employees(name: model.name, isActive: model.isActive)
+                            let newEmployee = Employees(name: model.name, id: model.id, isActive: model.isActive)
                             modelContext.insert(newEmployee)
                         }
                         dismiss()

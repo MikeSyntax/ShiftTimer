@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct StaffFormView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State var model: StaffFormModel
-    @State var myStaff: [String] = ["Mike", "Tatjana", "Claudia", "Hannes", "Bernd"]
+    @Query(sort: \Employees.name) private var employees: [Employees]
     
     var body: some View {
         NavigationStack{
@@ -31,9 +32,11 @@ struct StaffFormView: View {
                         ToolbarItemGroup(placement: .keyboard) {
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
-                                    ForEach(myStaff, id: \.self){ staff in
-                                        Button(staff.capitalized) {
-                                            model.comment = staff
+                                    ForEach(employees, id: \.self){ employee in
+                                        Button {
+                                            model.comment = employee.name
+                                        } label: {
+                                            Text(employee.name.capitalized)
                                         }
                                         .buttonStyle(.borderedProminent)
                                         .padding(1)
@@ -63,10 +66,5 @@ struct StaffFormView: View {
             .navigationTitle(model.updating ? "Bearbeiten" : "Erstellen")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
     }
 }
-
-//#Preview {
-//    StaffFormView(model: StaffFormModel(shift: Shift(name: "", startTime: Date(), endTime: Date())))
-//}
