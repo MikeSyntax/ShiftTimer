@@ -1,5 +1,5 @@
 //
-//  PersonsListView.swift
+//  StaffListView.swift
 //  ShiftTimer
 //
 //  Created by Mike Reichenbach on 22.06.24.
@@ -8,11 +8,12 @@
 import SwiftUI
 import SwiftData
 
-struct PersonsListView: View {
+struct StaffListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State private var modelType: ModelShift?
     var shift: Shift
+    
     var body: some View {
         @Bindable var shift = shift
         Group{
@@ -42,9 +43,7 @@ struct PersonsListView: View {
                     }
                     .swipeActions(edge: .leading) {
                         Button {
-                            if let index = shift.staff.firstIndex(where: {$0.id == staff.id}) {
-                                shift.staff.remove(at: index)
-                            }
+                            modelType = .updateStaff(staff)
                         }label: {
                             Label("Bearbeiten", systemImage: "pencil")
                         }
@@ -53,6 +52,7 @@ struct PersonsListView: View {
                 .listStyle(.plain)
             }
         }
+        Divider()
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("\(Image(systemName: shift.icon)) \(shift.name)")

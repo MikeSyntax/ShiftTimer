@@ -8,7 +8,8 @@
 import SwiftUI
 import SwiftData
 
-@Model class Shift {
+@Model 
+class Shift {
     var name: String
     @Relationship(deleteRule: .cascade)
     var icon: ShiftSymbol.RawValue

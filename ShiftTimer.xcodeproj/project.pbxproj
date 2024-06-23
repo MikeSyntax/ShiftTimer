@@ -20,10 +20,16 @@
 		2B8E36682C26D3EC00FCED4A /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E36672C26D3EC00FCED4A /* Color+Extensions.swift */; };
 		2B8E366A2C26DEF500FCED4A /* ShiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E36692C26DEF500FCED4A /* ShiftListView.swift */; };
 		2B8E366E2C26E79500FCED4A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E366D2C26E79500FCED4A /* CalendarView.swift */; };
-		2B8E36702C26E7A400FCED4A /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E366F2C26E7A400FCED4A /* PersonsListView.swift */; };
+		2B8E36702C26E7A400FCED4A /* StaffListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E366F2C26E7A400FCED4A /* StaffListView.swift */; };
 		2BF979D12C270D640075F807 /* StaffFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D02C270D640075F807 /* StaffFormModel.swift */; };
 		2BF979D32C270DF50075F807 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D22C270DF50075F807 /* Staff.swift */; };
 		2BF979D52C270EF90075F807 /* StaffFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D42C270EF90075F807 /* StaffFormView.swift */; };
+		2BF979D82C2726E40075F807 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D72C2726E40075F807 /* Date+Extensions.swift */; };
+		2BF979DA2C272F100075F807 /* ShiftCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979D92C272F0F0075F807 /* ShiftCalendarView.swift */; };
+		2BF979DC2C27406E0075F807 /* EmployeesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979DB2C27406E0075F807 /* EmployeesListView.swift */; };
+		2BF979DF2C28215E0075F807 /* EmployeesFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979DE2C28215E0075F807 /* EmployeesFormModel.swift */; };
+		2BF979E12C2821780075F807 /* EmployeesFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979E02C2821780075F807 /* EmployeesFormView.swift */; };
+		2BF979E32C2822CA0075F807 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF979E22C2822CA0075F807 /* Employees.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +47,16 @@
 		2B8E36672C26D3EC00FCED4A /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		2B8E36692C26DEF500FCED4A /* ShiftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftListView.swift; sourceTree = "<group>"; };
 		2B8E366D2C26E79500FCED4A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		2B8E366F2C26E7A400FCED4A /* PersonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
+		2B8E366F2C26E7A400FCED4A /* StaffListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListView.swift; sourceTree = "<group>"; };
 		2BF979D02C270D640075F807 /* StaffFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFormModel.swift; sourceTree = "<group>"; };
 		2BF979D22C270DF50075F807 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		2BF979D42C270EF90075F807 /* StaffFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFormView.swift; sourceTree = "<group>"; };
+		2BF979D72C2726E40075F807 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2BF979D92C272F0F0075F807 /* ShiftCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftCalendarView.swift; sourceTree = "<group>"; };
+		2BF979DB2C27406E0075F807 /* EmployeesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListView.swift; sourceTree = "<group>"; };
+		2BF979DE2C28215E0075F807 /* EmployeesFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesFormModel.swift; sourceTree = "<group>"; };
+		2BF979E02C2821780075F807 /* EmployeesFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesFormView.swift; sourceTree = "<group>"; };
+		2BF979E22C2822CA0075F807 /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 				2B8E36552C26BB0700FCED4A /* StartTabView.swift */,
 				2B8E364B2C26BAAB00FCED4A /* Assets.xcassets */,
 				2B8E366C2C26E77700FCED4A /* Calendar Views */,
+				2BF979DD2C28213D0075F807 /* Employee Views */,
 				2B8E36712C27056700FCED4A /* Extensions */,
 				2B8E36592C26BFB300FCED4A /* Models */,
 				2B8E366B2C26E76A00FCED4A /* Persons Views */,
@@ -104,6 +117,7 @@
 			children = (
 				2B8E365A2C26BFE100FCED4A /* Shift.swift */,
 				2BF979D22C270DF50075F807 /* Staff.swift */,
+				2BF979E22C2822CA0075F807 /* Employees.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,7 +137,7 @@
 		2B8E366B2C26E76A00FCED4A /* Persons Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B8E366F2C26E7A400FCED4A /* PersonsListView.swift */,
+				2B8E366F2C26E7A400FCED4A /* StaffListView.swift */,
 				2BF979D02C270D640075F807 /* StaffFormModel.swift */,
 				2BF979D42C270EF90075F807 /* StaffFormView.swift */,
 			);
@@ -134,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8E366D2C26E79500FCED4A /* CalendarView.swift */,
+				2BF979D92C272F0F0075F807 /* ShiftCalendarView.swift */,
 			);
 			path = "Calendar Views";
 			sourceTree = "<group>";
@@ -142,8 +157,19 @@
 			isa = PBXGroup;
 			children = (
 				2B8E36672C26D3EC00FCED4A /* Color+Extensions.swift */,
+				2BF979D72C2726E40075F807 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2BF979DD2C28213D0075F807 /* Employee Views */ = {
+			isa = PBXGroup;
+			children = (
+				2BF979DB2C27406E0075F807 /* EmployeesListView.swift */,
+				2BF979DE2C28215E0075F807 /* EmployeesFormModel.swift */,
+				2BF979E02C2821780075F807 /* EmployeesFormView.swift */,
+			);
+			path = "Employee Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,20 +242,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF979DF2C28215E0075F807 /* EmployeesFormModel.swift in Sources */,
 				2BF979D52C270EF90075F807 /* StaffFormView.swift in Sources */,
 				2B8E366A2C26DEF500FCED4A /* ShiftListView.swift in Sources */,
 				2BF979D12C270D640075F807 /* StaffFormModel.swift in Sources */,
-				2B8E36702C26E7A400FCED4A /* PersonsListView.swift in Sources */,
+				2BF979E32C2822CA0075F807 /* Employees.swift in Sources */,
+				2B8E36702C26E7A400FCED4A /* StaffListView.swift in Sources */,
+				2BF979E12C2821780075F807 /* EmployeesFormView.swift in Sources */,
 				2B8E36662C26CD3300FCED4A /* ShiftIconSelectionView.swift in Sources */,
 				2B8E365D2C26C0B200FCED4A /* ShiftSymbol.swift in Sources */,
 				2B8E36612C26C21400FCED4A /* ShiftFormModel.swift in Sources */,
 				2B8E36582C26BD6800FCED4A /* ModelShift.swift in Sources */,
 				2B8E36642C26C5F100FCED4A /* ShiftFormView.swift in Sources */,
+				2BF979D82C2726E40075F807 /* Date+Extensions.swift in Sources */,
 				2B8E366E2C26E79500FCED4A /* CalendarView.swift in Sources */,
+				2BF979DA2C272F100075F807 /* ShiftCalendarView.swift in Sources */,
 				2B8E36682C26D3EC00FCED4A /* Color+Extensions.swift in Sources */,
 				2B8E36482C26BAA900FCED4A /* ShiftTimerApp.swift in Sources */,
 				2B8E36562C26BB0700FCED4A /* StartTabView.swift in Sources */,
 				2BF979D32C270DF50075F807 /* Staff.swift in Sources */,
+				2BF979DC2C27406E0075F807 /* EmployeesListView.swift in Sources */,
 				2B8E365B2C26BFE100FCED4A /* Shift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

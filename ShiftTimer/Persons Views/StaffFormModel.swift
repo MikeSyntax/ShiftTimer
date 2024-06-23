@@ -26,4 +26,8 @@ class StaffFormModel {
         self.comment = comment
         
     }
+    
+    var disabled: Bool {
+        comment.isEmpty
+    }
 }

@@ -26,6 +26,8 @@ struct ShiftFormView: View {
                                 TextField("Schichtname", text: $model.name)
                                     .textFieldStyle(.roundedBorder)
                             }
+                            .keyboardType(.default)
+                            .submitLabel(.done)
                             Section(header: Text("Wähle ein passendes Icon")){
                                 Button {
                                     selectingIcon.toggle()

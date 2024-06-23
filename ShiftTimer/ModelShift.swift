@@ -12,6 +12,8 @@ enum ModelShift: View, Identifiable, Equatable {
     case updateNewShift(Shift)
     case newStaff(Shift)
     case updateStaff(Staff)
+    case newEmployee
+    case updateNewEmployee(Employees)
     
     var id: String {
         switch self {
@@ -23,6 +25,10 @@ enum ModelShift: View, Identifiable, Equatable {
             "newStaff"
         case .updateStaff:
             "updateStaff"
+        case .newEmployee:
+            "newEmployee"
+        case .updateNewEmployee:
+            "updateNewEmployee"
         }
     }
     
@@ -36,7 +42,10 @@ enum ModelShift: View, Identifiable, Equatable {
             StaffFormView(model: StaffFormModel(shift: shift))
         case .updateStaff(let staff):
             StaffFormView(model: StaffFormModel(staff: staff))
-            
+        case .newEmployee:
+            EmployeesFormView(model: EmployeesFormModel())
+        case .updateNewEmployee(let employees):
+            EmployeesFormView(model: EmployeesFormModel(employees: employees))
         }
     }
 }

@@ -11,6 +11,7 @@ struct StaffFormView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State var model: StaffFormModel
+    @State var myStaff: [String] = ["Mike", "Tatjana", "Claudia", "Hannes", "Bernd"]
     
     var body: some View {
         NavigationStack{
@@ -20,30 +21,48 @@ struct StaffFormView: View {
                         DatePicker("Wähle den Tag", selection: $model.date, displayedComponents: .date)
                     }
                     Section(header: Text("Personal")) {
-                        TextField("Wählen Sie einen Mitarbeiter", text: $model.comment, axis: .vertical)
+                        TextField("Wählen Sie einen Mitarbeiter", text: $model.comment)
                             .textFieldStyle(.roundedBorder)
                             .frame(maxWidth: .infinity)
                     }
-                }
-                    Button(model.updating ? "Bearbeiten" : "Erstellen") {
-                        if model.updating {
-                            model.staff?.date = model.date
-                            model.staff?.comment = model.comment
-                        } else {
-                            let newStaff = Staff(date: model.date, comment: model.comment)
-                            model.shift?.staff.append(newStaff)
+                    .keyboardType(.default)
+                    .submitLabel(.done)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            ScrollView(.horizontal, showsIndicators: false){
+                                HStack{
+                                    ForEach(myStaff, id: \.self){ staff in
+                                        Button(staff.capitalized) {
+                                            model.comment = staff
+                                        }
+                                        .buttonStyle(.borderedProminent)
+                                        .padding(1)
+                                    }
+                                }
+                            }
                         }
-                        dismiss()
                     }
-                    .buttonStyle(.borderedProminent)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.top)
-                    Spacer()
                 }
-                .padding()
-                .navigationTitle(model.updating ? "Bearbeiten" : "Erstellen")
-                .navigationBarTitleDisplayMode(.inline)
+                Button(model.updating ? "Bearbeiten" : "Erstellen") {
+                    if model.updating {
+                        model.staff?.date = model.date
+                        model.staff?.comment = model.comment
+                    } else {
+                        let newStaff = Staff(date: model.date, comment: model.comment)
+                        model.shift?.staff.append(newStaff)
+                    }
+                    dismiss()
+                }
+                .buttonStyle(.borderedProminent)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .disabled(model.disabled)
+                .padding(.top)
+                Spacer()
             }
+            .padding()
+            .navigationTitle(model.updating ? "Bearbeiten" : "Erstellen")
+            .navigationBarTitleDisplayMode(.inline)
+        }
         
     }
 }

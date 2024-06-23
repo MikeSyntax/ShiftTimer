@@ -52,7 +52,9 @@ struct ShiftListView: View {
                     }
                     .listStyle(.plain)
                 }
+             
             }
+            Divider()
             .navigationTitle("Schichtplan")
             .toolbar {
                 Button {
@@ -66,7 +68,7 @@ struct ShiftListView: View {
                 }
             }
             .navigationDestination(for: Shift.self) { shift in
-                PersonsListView(shift: shift)
+                StaffListView(shift: shift)
             }
         }
     }

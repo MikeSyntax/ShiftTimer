@@ -8,20 +8,28 @@
 import SwiftUI
 
 struct StartTabView: View {
+    
+    @State private var selectedTab: Int = 0
+    
     var body: some View {
         TabView{
-            ShiftListView()
-            .tabItem {
-                Label("Schichtplan", systemImage: "square.3.layers.3d.down.forward")
-            }
-//            PersonsListView(shift: <#Shift#>)
-//                .tabItem {
-//                    Label("Personal", systemImage: "person.3")
-//                }
-            CalendarView()
+            ShiftCalendarView()
                 .tabItem {
                     Label("Kalender", systemImage: "calendar")
-                }
+                }.tag(0)
+            
+            ShiftListView()
+                .tabItem {
+                    Label("Schichtplan", systemImage: "square.3.layers.3d.down.forward")
+                }.tag(1)
+            
+            EmployeesListView()
+                .tabItem {
+                    Label("Mitarbeiter", systemImage: "person.3")
+                }.tag(2)
+        }
+        .onAppear {
+            self.selectedTab = 0
         }
     }
 }
