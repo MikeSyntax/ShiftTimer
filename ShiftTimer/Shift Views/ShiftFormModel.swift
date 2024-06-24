@@ -29,6 +29,7 @@ class ShiftFormModel {
         self.endTime = endTime
         self.hexColor = hexColor
     }
+    
     var disabled: Bool {
         name.isEmpty
     }

@@ -49,7 +49,7 @@ struct ShiftCalendarView: View {
                 Divider()
             }
             .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
-            .navigationTitle("Schichtplan")
+            .navigationTitle("Schicht Kalender")
         }
         .onAppear{
             years = Array(Set(staffs.map { $0.date.yearInt }.sorted()))

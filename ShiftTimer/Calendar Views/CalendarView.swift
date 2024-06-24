@@ -74,8 +74,8 @@ struct CalendarView: View {
                                             .offset(x: 5, y: 5)
                                     }
                                 }
-//                        }
-                    }
+                        }
+//                    }
                     
                 }
             }
@@ -95,7 +95,6 @@ struct CalendarView: View {
         .onChange(of: selectedShift) {
             setupCount()
         }
-        
     }
     func setupCount(){
         var filteredStaff = staffs

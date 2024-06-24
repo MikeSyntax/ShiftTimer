@@ -29,10 +29,10 @@ struct EmployeesFormView: View {
                             Toggle(model.isActive ? "aktiv" : "inaktiv", isOn: $model.isActive)
                         }
                     }
-                    
                     Button(model.updating ? "Bearbeiten" : "Erstellen"){
                         if model.updating {
                             model.employees?.name = model.name
+                            model.employees?.id = model.id
                             model.employees?.isActive = model.isActive
                         } else {
                             let newEmployee = Employees(name: model.name, id: model.id, isActive: model.isActive)

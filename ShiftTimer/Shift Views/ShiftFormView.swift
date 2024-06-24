@@ -74,7 +74,7 @@ struct ShiftFormView: View {
                             model.shift?.endTime = model.endTime
                             model.shift?.hexColor = model.hexColor.toHex()!
                         } else {
-                            let newShift = Shift(name: model.name, icon: model.icon, startTime: startTime, endTime: endTime, hexColor: model.hexColor.toHex()!)
+                            let newShift = Shift(name: model.name, icon: model.icon, startTime: model.startTime, endTime: model.endTime, hexColor: model.hexColor.toHex()!)
                             modelContext.insert(newShift)
                         }
                         dismiss()

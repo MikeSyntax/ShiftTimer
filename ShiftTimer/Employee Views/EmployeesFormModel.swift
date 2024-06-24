@@ -20,10 +20,10 @@ class EmployeesFormModel {
     init () {}
     
     init(employees: Employees) {
+        self.employees = employees
         self.name = name
         self.id = id
         self.isActive = isActive
-        
     }
     
     var disabled: Bool {

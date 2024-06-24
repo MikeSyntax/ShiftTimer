@@ -89,17 +89,17 @@
 		2B8E36462C26BAA900FCED4A /* ShiftTimer */ = {
 			isa = PBXGroup;
 			children = (
-				2B8E36572C26BD6800FCED4A /* ModelShift.swift */,
 				2B8E36472C26BAA900FCED4A /* ShiftTimerApp.swift */,
-				2B8E36552C26BB0700FCED4A /* StartTabView.swift */,
 				2B8E364B2C26BAAB00FCED4A /* Assets.xcassets */,
 				2B8E366C2C26E77700FCED4A /* Calendar Views */,
+				2BB3DC552C29AC3700FB5946 /* ContentView */,
 				2BF979DD2C28213D0075F807 /* Employee Views */,
+				2BB3DC542C29AC1A00FB5946 /* Enums */,
 				2B8E36712C27056700FCED4A /* Extensions */,
 				2B8E36592C26BFB300FCED4A /* Models */,
-				2B8E366B2C26E76A00FCED4A /* Staff Views */,
 				2B8E364D2C26BAAB00FCED4A /* Preview Content */,
 				2B8E36622C26C40800FCED4A /* Shift Views */,
+				2B8E366B2C26E76A00FCED4A /* Staff Views */,
 			);
 			path = ShiftTimer;
 			sourceTree = "<group>";
@@ -160,6 +160,22 @@
 				2BF979D72C2726E40075F807 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2BB3DC542C29AC1A00FB5946 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2B8E36572C26BD6800FCED4A /* ModelShift.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2BB3DC552C29AC3700FB5946 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				2B8E36552C26BB0700FCED4A /* StartTabView.swift */,
+			);
+			path = ContentView;
 			sourceTree = "<group>";
 		};
 		2BF979DD2C28213D0075F807 /* Employee Views */ = {

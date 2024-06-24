@@ -22,7 +22,12 @@ struct EmployeesListView: View {
                 } else {
                     List(employees) { employee in
                         HStack{
-                            Text(employee.name.capitalized)
+                            VStack(alignment: .leading){
+                                Text(employee.name.capitalized)
+                                Spacer()
+                                Text("Nr. \(employee.id)")
+                                    .font(.system(size: 8))
+                            }
                             Spacer()
                             if employee.isActive {
                                 Text("aktiv")
@@ -32,7 +37,6 @@ struct EmployeesListView: View {
                                     .foregroundColor(.red)
                             }
                         }
-                        
                         .swipeActions(edge: .trailing) {
                             Button(role: .destructive){
                                 modelContext.delete(employee)
