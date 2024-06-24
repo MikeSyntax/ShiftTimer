@@ -31,7 +31,13 @@ struct ShiftListView: View {
                                     Text("\(formattedTime(time: shift.startTime)) - \(formattedTime(time: shift.endTime)) Uhr")
                                 }
                                 Spacer()
-                                Text("^[\(shift.staff.count) Mitarbeiter eingeteilt](inflect: true)")
+                                VStack{
+                                    Text("  ")
+                                }
+                                VStack(alignment: .trailing){
+                                    //Pluralwert wird von Swift UI automatisch ausgewählt
+                                    Text("^[\(shift.staff.count) Mitarbeiter eingeteilt](inflect: true)")
+                                }
                             }
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                         }

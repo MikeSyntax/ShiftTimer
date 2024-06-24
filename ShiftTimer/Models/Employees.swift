@@ -14,7 +14,7 @@ class Employees {
     var id: String
     var isActive: Bool
     
-    init(name: String, id: String, isActive: Bool = true) {
+    init(name: String, id: String, isActive: Bool) {
         
         self.name = name
         self.id = id

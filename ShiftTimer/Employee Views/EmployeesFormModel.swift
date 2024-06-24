@@ -12,9 +12,9 @@ class EmployeesFormModel {
     var name: String = ""
     var isActive: Bool = true
     var id: String = UUID().uuidString
-    var shift: Shift?
-    var staff: Staff?
+    
     var employees: Employees?
+    
     var updating: Bool { employees != nil }
     
     init () {}

@@ -12,7 +12,9 @@ class StaffFormModel {
     var date: Date = Date.now
     var comment: String = ""
     var shift: Shift?
+    
     var staff: Staff?
+    
     var updating: Bool { staff != nil }
     
     init(shift: Shift) {

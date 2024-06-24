@@ -15,8 +15,9 @@ struct ShiftFormView: View {
     @State private var selectingIcon: Bool = false
     @State private var startTime = Date()
     @State private var endTime = Date()
-    
+     
     var body: some View {
+        let shiftNames: [String] = ["Frühschicht", "Spätschicht", "Nachtschicht", "Vormittag", "Nachmittag", "Abend"]
         ZStack{
             Color(UIColor.systemBackground).ignoresSafeArea(.all)
             NavigationStack{
@@ -28,6 +29,22 @@ struct ShiftFormView: View {
                             }
                             .keyboardType(.default)
                             .submitLabel(.done)
+                            .toolbar {
+                                ToolbarItemGroup(placement: .keyboard) {
+                                    ScrollView(.horizontal, showsIndicators: false){
+                                        HStack{
+                                            ForEach(shiftNames, id: \.self){ shiftName in
+                                                Button(shiftName.capitalized){
+                                                    model.name = shiftName
+                                                }
+                                                .buttonStyle(.borderedProminent)
+                                                .padding(1)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
                             Section(header: Text("Wähle ein passendes Icon")){
                                 Button {
                                     selectingIcon.toggle()

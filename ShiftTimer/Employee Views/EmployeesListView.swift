@@ -24,8 +24,13 @@ struct EmployeesListView: View {
                         HStack{
                             Text(employee.name.capitalized)
                             Spacer()
+                            if employee.isActive {
                                 Text("aktiv")
                                     .foregroundColor(.green)
+                            } else {
+                                Text("inaktiv")
+                                    .foregroundColor(.red)
+                            }
                         }
                         
                         .swipeActions(edge: .trailing) {

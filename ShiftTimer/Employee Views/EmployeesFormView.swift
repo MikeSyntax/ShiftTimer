@@ -19,14 +19,17 @@ struct EmployeesFormView: View {
             NavigationStack{
                 VStack(spacing: 20){
                     Form{
-                        Section(header: Text("Neuer Mitarbeiter")){
-                            TextField("Mitarbeitername", text: $model.name)
+                        Section(header: Text("Mitarbeitername")){
+                            TextField("Wähle einen Namen", text: $model.name)
                                 .textFieldStyle(.roundedBorder)
                         }
                         .keyboardType(.default)
                         .submitLabel(.done)
+                        Section(header: Text("Mitarbeiter aktiv")){
+                            Toggle(model.isActive ? "aktiv" : "inaktiv", isOn: $model.isActive)
+                        }
                     }
-                    .padding(.top)
+                    
                     Button(model.updating ? "Bearbeiten" : "Erstellen"){
                         if model.updating {
                             model.employees?.name = model.name
